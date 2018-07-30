@@ -1,28 +1,280 @@
 .App {
   text-align: center;
+  max-width: 100%;
+  height: 100%;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  margin: 0 2%;
 }
 
 .App-header {
   background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+  height: 100px;
+  padding: 1%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.App-header:focus{
+  border: 3px  solid #00f792 ;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2.5em;
+  
+  color: #00f7d7;
+  -webkit-animation: title 2s linear 2s infinite; /* Safari 4.0 - 8.0 */
+    animation: title 2s linear 2s infinite;
+    
+
 }
 
 .App-intro {
   font-size: large;
 }
 
+#skip a
+{ 
+position:absolute; 
+left:-10000px; 
+top:auto; 
+width:1px; 
+height:1px; 
+overflow:hidden;
+} 
+ 
+#skip a:focus 
+{ 
+position:static; 
+width:auto; 
+height:auto; 
+color:#fff;
+border: 1px doted #00f792;
+} 
+
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from { color:#42f4eb ;transform: rotate(0deg); }
+  to { color: #00f792;transform: rotate(360deg); }
 }
+
+@keyframes title {
+  from { color:#42f4eb  }
+  to { color: #00f792; }
+}
+
+.gmnoprint:focus {
+  border: 1px 1px doted #00f792;
+}
+
+.nav-filters {
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  top: 20%;
+  left: 80%;
+}
+
+
+.extraClass {
+    font-size: 15px !important;
+    pointer-events: auto !important;
+    text-align: center;
+    border-radius: 20px;
+
+
+}
+.extraClass:hover {
+visibility: visible;
+opacity: 1;
+}
+
+
+
+.nav-filters #list-btn {
+  font-size: 1.2em;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  color: #00effc;
+  background: #000;
+  box-shadow: 3px 3px 5px #00ffbc;
+  border: 2px solid #02a988;
+  padding: 5%;
+  margin-right: 5%;
+
+}
+
+
+
+.nav-filters ul {
+  list-style-type: none;
+  padding: 0;
+  color: #fff;
+  overflow: scroll;
+  height: 550px;
+  font-size: 0.80em;
+  
+  ;
+  margin-top: 2%;
+}
+
+.nav-filters ul li {
+  padding: 2%;
+  border-bottom: 1px solid #fff;
+  background: #000;
+  margin: 2% 0;
+  border: 2px  solid #0036ef;
+  border-radius: 5px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+
+.nav-filters ul li:hover,
+.nav-filters ul li:focus{
+  background: #6ee6ec;
+  color: #000;
+}
+
+#search-box {
+  border-radius: 5px;
+  margin: 2%;
+  height: 40px;
+  font-size: 1em;
+  padding: 1%;
+}
+
+.filter-opt button{
+  background: transparent;
+  border: transparent;
+  color: #000;
+  position: absolute;
+  right: 240px;
+  top: 75px;
+  box-shadow: 0px 0px 0px transparent;
+  font-size: 1.7em;
+}
+
+.gm-style-iw {
+width: 400px; 
+min-height: 150px;
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+  
+  .app-header {
+    height: 80px;
+  }
+
+  .App-title {
+    font-size:1.5em;
+    letter-spacing: 3px;
+    margin: 2% auto;
+    
+  }
+
+  .filter-opt button{
+    display: none;
+    
+  }
+
+  .nav-filters{
+    top: 20%;
+    left: 55%;
+    overflow: scroll;
+  }
+
+  .nav-filters #list-btn {
+    font-size: 1em;
+    letter-spacing: 2px;
+  }
+
+  .extraClass {
+    font-size: 10px !important;
+    
+  }
+
+  .extraClass:hover {
+visibility: visible !important;
+opacity: 1 !important;
+}
+
+
+  #search-box {
+    width: 150px;
+    font-size: 0.83em;
+    height: 30px;
+  }
+
+  .list {
+    width: 90%;
+
+  }
+
+  .nav-filters ul {
+    height: 250px;
+    overflow: scroll;
+  }
+
+  .nav-filters ul li {
+   opacity: 0.8;
+    
+  }
+  
+}
+
+@media only screen 
+  and (min-width: 481px) 
+  and (max-width: 768px) {
+
+  .App-title {
+    font-size:2em;
+    letter-spacing: 3px;
+    margin: 2% auto;
+    
+  }
+
+  .nav-filters{
+    top: 20%;
+    left: 55%;
+    overflow: scroll;
+  }
+
+  .filter-opt button{
+    right: 2px;
+    top: 10px;
+  }
+
+  .nav-filters ul{
+    height: 300px;
+    overflow: scroll;
+  }
+  .nav-filters ul li {
+    opacity: 0.80;
+  }
+
+}
+
+@media only screen 
+  and (min-width: 769px) 
+  and (max-width: 1200px) {
+
+    .nav-filters {
+      top: 15%;
+      left: 70%;
+    }
+
+    .filter-opt button {
+      right: 240px;
+    top: 70px;
+    }
+
+} 
