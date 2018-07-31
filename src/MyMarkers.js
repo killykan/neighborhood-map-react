@@ -35,13 +35,14 @@ class MyMarkers extends Component {
 
     marker.addListener('click', function() {
       self.populateInfoWindow(this, myInfoWindow)
+      this.setAnimation(google.maps.Animation.BOUNCE);
     });
 
     markerUpdate(this);
 
     marker.addListener('mouseover', function() {
       this.setIcon(highlightedIcon);
-      this.setAnimation(google.maps.Animation.BOUNCE);
+      
     });
 
     marker.addListener('mouseout', function(){
@@ -98,7 +99,10 @@ class MyMarkers extends Component {
 
           function addContent(tipsReq, photosReq){
             let htmlResult='';
-            htmlResult+=`<header tabIndex="0"><h3>${name}</h3></header>`
+            htmlResult+=`<header tabIndex="0">
+                          <h3>${name}</h3>
+                          <h5><em>Infos by Foursquare</em></h5>
+                        </header>`
              if(photosReq && photosReq.response.photos.items){
               const myPics = photosReq.response.photos.items;
               htmlResult+=`<figure>

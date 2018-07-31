@@ -29,7 +29,11 @@ class Map extends Component{
 				center: new maps.LatLng(lat, lng),
 				zoom: mapStyles.zoom,
 				styles: mapStyles.styles,
-				mapTypesControl: mapStyles.mapTypesControl
+				mapTypesControl: mapStyles.mapTypesControl,
+				mapTypeControl: true,
+  				mapTypeControlOptions: {
+    			style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+  				}
 			})
 
 			this.map = new maps.Map(mapNode, mapObj);

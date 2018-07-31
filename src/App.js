@@ -58,6 +58,7 @@ class App extends Component {
         <FilterNav
         handleSearch={this.handleSearch}
         myLocations = {this.state.myLocations}
+        google={this.props.google}
         />
         
       </div>

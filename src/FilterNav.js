@@ -22,7 +22,7 @@ class FilterNav extends React.Component {
   	render() {
     	
   		
-    	const { handleSearch, myLocations} = this.props
+    	const { handleSearch, myLocations, google} = this.props
     	const {isHidden} = this.state
     	
 
@@ -33,7 +33,7 @@ class FilterNav extends React.Component {
               <ReactTooltip id='tooltip' aria-haspopup="true" role="tooltip" place='top' type='dark' className='extraClass' delayHide={800} effect='float' mutliline={true}>
                         <p>Click the button <br/> to filter the markers</p>
                     </ReactTooltip>
-        			{!this.state.isHidden && <List isHidden={isHidden} myLocations={myLocations} handleSearch={handleSearch}  />}
+        			{!this.state.isHidden && <List isHidden={isHidden} myLocations={myLocations} handleSearch={handleSearch} google={google}  />}
         		</header>
           </nav>
         	
