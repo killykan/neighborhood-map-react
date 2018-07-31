@@ -2,7 +2,7 @@
 
 This app corresponds to the last proposed project regarding the FEND nanodegree by Udacity : create a responsive, accessible and offline-first app using React and a map API such as Google Maps. The project should contain an other third-party API used to retrieve infos on several markers of choosen locations on the map.
 
-## Project's Specificities
+## Project Specificities
 
 ### 'create-react-app'
 
@@ -14,7 +14,7 @@ See more at : https://www.npmjs.com/package/create-react-app.
 To make the Google maps API work asynchronously with react, I've used the 'google-map-react' library. >The library includes a helper to wrap aroud the Google Maps API.The GoogleApiWrapper Higher-Order component accepts a configuration object which must include an apiKey. See lib/GoogleApi.js for all options it accepts.
 See more at : https://www.npmjs.com/package/google-maps-react.
 
-## Project's objectives
+## Project objectives
 
 ### React
 The whole app is written using React, and files are structured this way. All the components to render are located in the `.src` folder. 
