@@ -1,8 +1,8 @@
 # My Neighborhood react app
 
-This app correspoonds to the last proposed project regarding the FEND nanodegree by Udacity : create a responsive, accessible and offline-first app using React and a map API such as Google Maps. The project should contain an other third-party API used to retrieve infos on several markers of choosen locations on the map.
+This app corresponds to the last proposed project regarding the FEND nanodegree by Udacity : create a responsive, accessible and offline-first app using React and a map API such as Google Maps. The project should contain an other third-party API used to retrieve infos on several markers of choosen locations on the map.
 
-##Project's Specificities
+## Project's Specificities
 
 ### 'create-react-app'
 
