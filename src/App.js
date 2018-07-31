@@ -13,7 +13,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      myLocations: [],
+      myLocations: [],  
     }
 
     this.myMarkers = [];
@@ -22,14 +22,6 @@ class App extends Component {
     this.handleSearch=this.handleSearch.bind(this);
   }
 
-
-
-  markerUpdate(mk) {
-    this.myMarkers.push(mk);
-    if(this.myMarkers.length === myLatLng.placesLatLng.length) {
-        this.setState({myLocations: this.myMarkers})
-      } 
-  }
 
   handleSearch(query) {
     let result = this.state.myLocations.map(places => {
@@ -41,6 +33,16 @@ class App extends Component {
     })
     this.setState({myLocations:result})
   }
+
+  
+  markerUpdate(mk) {
+    this.myMarkers.push(mk);
+    if(this.myMarkers.length === myLatLng.placesLatLng.length) {
+        this.setState({myLocations: this.myMarkers})
+      } 
+  }
+
+  
   
   render() {
     return (
