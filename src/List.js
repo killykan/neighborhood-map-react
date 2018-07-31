@@ -2,6 +2,10 @@ import React from 'react';
 import ReactStreetview from 'react-streetview';
 import ReactTooltip from 'react-tooltip';
 
+                                /*child of the FilterNav component*/
+                                /*it displays the list of locations, the input field for search*/
+                                /*and the button to toggle the street views above each lit item*/
+
 class List extends React.Component {
     constructor(){
         super()
@@ -12,10 +16,12 @@ class List extends React.Component {
         this.showMe= this.showMe.bind(this);
     }
 
+    /*show street views when the 'eye-button' is clicked*/
     showMe (){
         this.setState({showMe: !this.state.showMe}) /*tip: try to make it open One view !!*/
     }
 
+    /*allows to open infowindow when a location in the list is clicked*/
     ManageMark(loc) {
         let {google} = this.props
         loc.populateInfoWindow(loc.marker, loc.props.myInfoWindow);
@@ -23,6 +29,7 @@ class List extends React.Component {
         
     }
 
+    /*add an enter option to click on the list, better for accessibility*/
     ManageKey(e, location) {
         if(e.key === "Enter"){
             e.preventDefault();

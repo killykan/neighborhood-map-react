@@ -10,3 +10,5 @@ export const placesLatLng = [
 		{name: 'Place de la Trinité', location: {lat: 43.599738, lng: 1.444459}},
 		{name: 'Place Saint-Pierre', location: {lat: 43.603708, lng: 1.435898}}
 ]
+
+/*Lists of the locations being displayed on the map*/

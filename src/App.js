@@ -22,7 +22,7 @@ class App extends Component {
     this.handleSearch=this.handleSearch.bind(this);
   }
 
-
+  /*this function maps over the locations and shows the ones matching the input field */
   handleSearch(query) {
     let result = this.state.myLocations.map(places => {
       let matched = places.props.name.toLowerCase().indexOf(query) >=0;
@@ -34,7 +34,7 @@ class App extends Component {
     this.setState({myLocations:result})
   }
 
-  
+  /*function to update markers' array and the state of myLocations*/
   markerUpdate(mk) {
     this.myMarkers.push(mk);
     if(this.myMarkers.length === myLatLng.placesLatLng.length) {
@@ -53,7 +53,7 @@ class App extends Component {
 
         <MapContainer
           google= {this.props.google}
-          markerUpdate={this.markerUpdate}
+          markerUpdate={this.markerUpdate}    
           myLocations={this.state.myLocations}
         />
 

@@ -4,6 +4,8 @@ import MyMarkers from './MyMarkers';
 import mapStyles from './mapStyles';
 import * as myLatLng from './myLatLng'
 
+										/*The map component initializing the google map*/
+
 class Map extends Component{
 
 	componentDidMount(){
@@ -16,6 +18,7 @@ class Map extends Component{
 		}
 	}
 
+	/*main function responsible of initializing the map */
 	mapInit() {
 
 		if(this.props && this.props.google){
@@ -36,7 +39,7 @@ class Map extends Component{
   				}
 			})
 
-			this.map = new maps.Map(mapNode, mapObj);
+			this.map = new maps.Map(mapNode, mapObj); 
 			this.bounds = new google.maps.LatLngBounds();
 			this.myInfoWindow = new google.maps.InfoWindow();
 			this.forceUpdate();
@@ -63,6 +66,7 @@ class Map extends Component{
 		return (
 			<div ref='map' style={style}>
 				Loading Map...
+				
 				{myLatLng.placesLatLng.map((place,i) => (
 					
 					<MyMarkers key={i}

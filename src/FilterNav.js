@@ -2,7 +2,7 @@ import React from 'react';
 import List from './List';
 import ReactTooltip from 'react-tooltip';
 
-
+                    /*The Filter component*/
 	
 
 class FilterNav extends React.Component {
@@ -15,6 +15,7 @@ class FilterNav extends React.Component {
   	
 	}
 	
+  /*open an input and list of locations when the button is clicked*/
 	toggleList (){
   		this.setState({isHidden: !this.state.isHidden})
 	}

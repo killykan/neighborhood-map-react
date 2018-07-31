@@ -1,4 +1,6 @@
 import  {Component} from 'react';
+                                  
+                                  /*The Marker component responsible of rendering markers and infowindows*/
 
 class MyMarkers extends Component {
 
@@ -9,6 +11,7 @@ class MyMarkers extends Component {
     }
   }
 
+  /*this function initializes the markers, customizes them and add listeners to them*/
   markerInit() {
     if(this.marker) {
       this.marker.setMap(null);
@@ -57,7 +60,7 @@ class MyMarkers extends Component {
     map.fitBounds(bounds);
 
   }
-
+    /*custom markers function*/
     makeMarkerIcon(markerColor) {
         let markerImage = new this.props.google.maps.MarkerImage(
           'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|'+ markerColor +
@@ -69,12 +72,14 @@ class MyMarkers extends Component {
         return markerImage;
     }
 
+    /*function responsible of showing infowindow when a marker is clicked*/
     populateInfoWindow(marker, infowindow){
       if (infowindow.marker !== marker){
         infowindow.setContent("LOADING..");
         let {map, bounds, name} = this.props;
         let idReq,tipsReq,photosReq;
 
+        //beginning of the fetch requests using Foursquare API
         fetch(`https://api.foursquare.com/v2/venues/search?ll=43.604429,1.443812&v=20180518&query=${name}&limit=1&client_id=M21LJWE3BGJCSYM5WDMIUBVPLLPBYMBRONPATMVGRFB5ZU0N&client_secret=U300KAHPHRYYA5MOJIDJDB3LO1XXZ3MBLS0QGQCAXT52XF3H`)
           .then(response => response.json())
           .then(data1 =>{
@@ -97,6 +102,7 @@ class MyMarkers extends Component {
             )
           })//end of fetch req
 
+        /*populate infowindows when requests succeeded with custom html*/
           function addContent(tipsReq, photosReq){
             let htmlResult='';
             htmlResult+=`<header tabIndex="0">

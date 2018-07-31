@@ -1,3 +1,6 @@
+/*customize map style*/
+/*styles provided by snazzymaps.com, by author Min*/
+
 const mapStyles = {
 	zoom: 15,
 	mapTypeControl: false,
