@@ -22,6 +22,10 @@ class App extends Component {
     this.handleSearch=this.handleSearch.bind(this);
   }
 
+  componentDidMount(){
+    window.gm_authFailure = this.gm_authFailure;
+}
+
   /*this function maps over the locations and shows the ones matching the input field */
   handleSearch(query) {
     let result = this.state.myLocations.map(places => {
@@ -41,6 +45,10 @@ class App extends Component {
         this.setState({myLocations: this.myMarkers})
       } 
   }
+
+  gm_authFailure(){
+    window.alert("Google Maps error!")
+}
 
   
   
