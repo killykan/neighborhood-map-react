@@ -41,7 +41,7 @@ class List extends React.Component {
    
         
 	render() {
-		const {myLocations, handleSearch, ManageMark, google} = this.props
+		const {myLocations, handleSearch} = this.props
 		const googleMapsApiKey = 'AIzaSyBKe2gqMi1-N6TwnYbA0JkJwdOKpulKesU';
         
 		return (
@@ -64,8 +64,8 @@ class List extends React.Component {
         		<ul>
                     {myLocations.filter(location => location.marker.visible === true).map((location,i) => (
                         <div key={i} >
-        			        <li  tabIndex="0" onClick={(e) => this.ManageMark(location)} onKeyPress={(e)=>this.ManageKey(e, location)} >
-                                <h4  aria-label="name of places">{location.props.name}</h4>
+        			        <li   onClick={(e) => this.ManageMark(location)} onKeyPress={(e)=>this.ManageKey(e, location)} >
+                                <h4  tabIndex="0" aria-label={location.props.name}>{location.props.name}</h4>
                                 <div id="skip"><a href="#search-box">back to input field</a></div>
                             </li>
                             {this.state.showMe?
