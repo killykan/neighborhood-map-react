@@ -64,7 +64,7 @@ class List extends React.Component {
         		<ul>
                     {myLocations.filter(location => location.marker.visible === true).map((location,i) => (
                         <div key={i} >
-        			        <li   onClick={(e) => this.ManageMark(location)} onKeyPress={(e)=>this.ManageKey(e, location)} >
+        			        <li role="button" onClick={(e) => this.ManageMark(location)} onKeyPress={(e)=>this.ManageKey(e, location)} >
                                 <h4  tabIndex="0" aria-label={location.props.name}>{location.props.name}</h4>
                                 <div id="skip"><a href="#search-box">back to input field</a></div>
                             </li>
